@@ -49,8 +49,8 @@ export default createComponent({
     IndexDisplayApi: () => import('./IndexDisplayApi.vue')
   },
   setup() {
-    init()
     const data = reactive(state)
+    init()
     return {
       data,
       method
