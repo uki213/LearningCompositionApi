@@ -26,6 +26,11 @@ const state = {
   text: ''
 }
 
+/*
+  関数が多くなる場合は、メソッドなどにまとめる
+  setup関数でreturnする必要があるもの（テンプレートで呼び出す）などをメソッドにまとめ、
+  まとめてsetup関数からreturnするほうが良いかも
+*/
 const method = {
   inputName: (value) => {
     state.name = value
