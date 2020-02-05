@@ -5,7 +5,7 @@
       <input
         type="text"
         :value="props.name"
-        @input="inputName"
+        @input="$emit('input', $event.target.value)"
       >
     </dd>
   </dl>
@@ -20,20 +20,14 @@ export default createComponent({
       type: String
     }
   },
-  setup(props, { emit }) {
+  setup(props) {
     /*
-      setupの第二引数のオブジェクトに入ってくる要素は以下の要素
+      setupの第二引数のオブジェクトに入ってくる要素は以下の要素(context)
       root, parent, refs, attrs, listeners, isServer, ssrContext, emit, slots
-      この中でよく使うのは
-      emit, slots, refs, attrsくらいかも？
+      できるだけ使ってはいけない!!!
     */
-    function inputName(event) {
-      emit('input', event.target.value)
-    }
-
     return {
-      props,
-      inputName
+      props
     }
   }
 })
