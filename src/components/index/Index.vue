@@ -17,6 +17,7 @@
 
 <script>
 import { createComponent, reactive } from '@vue/composition-api'
+// import store from '@/store' // Store(Vuex)はimportで使う？
 import axios from '@/axios' // axiosを使用する際は明示的にimportする。vueインスタンスに追加しない
 
 // state（data属性）はsetup()の外に記述する
