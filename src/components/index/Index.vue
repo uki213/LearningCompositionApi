@@ -40,6 +40,7 @@ const method = {
   }
 }
 
+// このinit関数はsetup関数からreturnしないので、methodには含めない。
 function init() {
   axios.get('/json/test.json').then((reslut) => {
     state.text = reslut.data.text
