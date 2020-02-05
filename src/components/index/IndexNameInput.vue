@@ -22,7 +22,7 @@ export default createComponent({
   },
   setup(props, { emit }) {
     /*
-      setupの第二引数内に入ってくる要素は以下の要素
+      setupの第二引数のオブジェクトに入ってくる要素は以下の要素
       root, parent, refs, attrs, listeners, isServer, ssrContext, emit, slots
       この中でよく使うのは
       emit, slots, refs, attrsくらいかも？
