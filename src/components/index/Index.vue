@@ -1,21 +1,45 @@
 <template>
   <div id="index">
-    <h1>ページタイトル</h1>
+    <h1>
+      ページタイトル
+    </h1>
     <IndexNameInput
-      :name="state.name"
-      @input="inputName"
+      :name="data.name"
+      @input="method.inputName"
     />
     <IndexPriceInput
-      :price="state.price"
-      @input="inputPrice"
+      :price="data.price"
+      @input="method.inputPrice"
     />
-    <IndexDisplayApi :api-result-text="state.text" />
+    <IndexDisplayApi :api-result-text="data.text" />
   </div>
 </template>
 
 <script>
 import { createComponent, reactive } from '@vue/composition-api'
 import axios from '@/axios' // axiosを使用する際は明示的にimportする
+
+// state（data属性）はsetup()の外に記述する
+const state = {
+  name: 'てすと',
+  price: 1000,
+  text: ''
+}
+
+const method = {
+  inputName: (value) => {
+    state.name = value
+  },
+  inputPrice: (value) => {
+    state.price = value
+  }
+}
+
+function init() {
+  axios.get('/json/test.json').then((reslut) => {
+    state.text = reslut.data.text
+  })
+}
 
 export default createComponent({
   components: { // コンポーネントの書き方は同じ
@@ -25,30 +49,11 @@ export default createComponent({
     IndexDisplayApi: () => import('./IndexDisplayApi.vue')
   },
   setup() {
-    const state = reactive({
-      name: 'てすと',
-      price: 1000,
-      text: ''
-    })
-
-    function inputName(value) {
-      state.name = value
-    }
-
-    function inputPrice(value) {
-      state.price = value
-    }
-
-    // なんかこの書き方は気に入らない…
-    axios.get('/json/test.json').then((reslut) => {
-      state.text = reslut.data.text
-    })
-
-
+    init()
+    const data = reactive(state)
     return {
-      state,
-      inputName,
-      inputPrice
+      data,
+      method
     }
   }
 })
