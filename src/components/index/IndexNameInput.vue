@@ -17,10 +17,7 @@ import { createComponent } from '@vue/composition-api'
 export default createComponent({
   props: {
     name: {
-      type: String,
-      {
-        default: ''
-      }
+      type: String
     }
   },
   setup(props, { emit }) {
