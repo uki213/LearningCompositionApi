@@ -7,6 +7,7 @@
         type="number"
         @input="$emit('input', $event.target.value)"
       >
+      {{ /* emit処理はテンプレートに寄せる。受け渡す値に加工が必要な場合は業務ロジックにわたし戻り値を得る */ }}
     </dd>
     <dd>税込み価格:{{ tax }}</dd>
   </dl>

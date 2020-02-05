@@ -5,7 +5,7 @@
       <input
         type="text"
         :value="props.name"
-        @input="$emit('input', $event.target.value)"
+        @input="$emit('input', extractionValue($event))"
       >
     </dd>
   </dl>
@@ -13,6 +13,11 @@
 
 <script>
 import { createComponent } from '@vue/composition-api'
+
+// emitする際に業務ロジックが必要な場合は、関数化する。
+function extractionValue(event) {
+  return event.target.value
+}
 
 export default createComponent({
   props: {
@@ -27,7 +32,8 @@ export default createComponent({
       できるだけ使ってはいけない!!!
     */
     return {
-      props
+      props,
+      extractionValue
     }
   }
 })
