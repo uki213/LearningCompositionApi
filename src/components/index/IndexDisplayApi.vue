@@ -11,7 +11,7 @@ import { createComponent } from '@vue/composition-api'
 export default createComponent({
   props: {
     apiResultText: {
-      type: String
+      type: String // propsのdefaultは無くても良い？
     }
   },
   setup(props) {
