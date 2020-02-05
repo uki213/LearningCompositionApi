@@ -47,7 +47,7 @@ function init() {
 }
 
 export default createComponent({
-  components: { // コンポーネントの書き方は同じ
+  components: { // コンポーネントの定義方法は同じ
     // 今後モジュールのimportが増えそうなので、コンポーネントは下記のような感じで書くほうが良いかも
     IndexNameInput: () => import('./IndexNameInput.vue'),
     IndexPriceInput: () => import('./IndexPriceInput.vue'),
