@@ -13,6 +13,7 @@
     />
     <IndexDisplayApi :api-result-text="data.text" />
     <IndexDisplayStore />
+    <IndexEmitTest @input="catchEmit" />
   </div>
 </template>
 
@@ -41,6 +42,10 @@ const method = {
   }
 }
 
+function catchEmit() {
+  console.log('Emit cached')
+}
+
 // このinit関数はsetup関数からreturnしないので、methodには含めない。
 function init() {
   axios.get('/json/test.json').then((reslut) => {
@@ -54,14 +59,16 @@ export default createComponent({
     IndexNameInput: () => import('./IndexNameInput.vue'),
     IndexPriceInput: () => import('./IndexPriceInput.vue'),
     IndexDisplayApi: () => import('./IndexDisplayApi.vue'),
-    IndexDisplayStore: () => import('./IndexDisplayStore.vue')
+    IndexDisplayStore: () => import('./IndexDisplayStore.vue'),
+    IndexEmitTest: () => import('./IndexEmitTest.vue')
   },
   setup() {
     const data = reactive(state)
     init()
     return {
       data,
-      method
+      method,
+      catchEmit
     }
   }
 })
