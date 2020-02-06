@@ -12,12 +12,12 @@
       @input="method.inputPrice"
     />
     <IndexDisplayApi :api-result-text="data.text" />
+    <IndexDisplayStore />
   </div>
 </template>
 
 <script>
 import { createComponent, reactive } from '@vue/composition-api'
-// import store from '@/store' // Store(Vuex)はimportで使う？
 import axios from '@/axios' // axiosを使用する際は明示的にimportする。vueインスタンスに追加しない
 
 // state（data属性）はsetup()の外に記述する
@@ -33,10 +33,10 @@ const state = {
   まとめてsetup関数からreturnするほうが良いかも
 */
 const method = {
-  inputName: (value) => {
+  inputName(value) {
     state.name = value
   },
-  inputPrice: (value) => {
+  inputPrice(value) {
     state.price = value
   }
 }
@@ -53,7 +53,8 @@ export default createComponent({
     // 今後モジュールのimportが増えそうなので、コンポーネントは下記のような感じで書くほうが良いかも
     IndexNameInput: () => import('./IndexNameInput.vue'),
     IndexPriceInput: () => import('./IndexPriceInput.vue'),
-    IndexDisplayApi: () => import('./IndexDisplayApi.vue')
+    IndexDisplayApi: () => import('./IndexDisplayApi.vue'),
+    IndexDisplayStore: () => import('./IndexDisplayStore.vue')
   },
   setup() {
     const data = reactive(state)
