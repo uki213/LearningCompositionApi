@@ -40,7 +40,7 @@ const method = {
 
 export default createComponent({
   setup() {
-    const { sampleStore } = store.state
+    const { sampleStore } = store.state // 必要なstateを抽出してreturnする
     return {
       sampleStore,
       method
