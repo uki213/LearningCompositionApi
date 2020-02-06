@@ -29,7 +29,8 @@ export default createComponent({
     /*
       setupの第二引数のオブジェクトに入ってくる要素は以下の要素(context)
       root, parent, refs, attrs, listeners, isServer, ssrContext, emit, slots
-      できるだけ使ってはいけない!!!
+      強引な手法に転用できるので、使わずにいられるのであれば使いたくない。
+      どうしても使用する場合も[ emit、refs、attrs ]程度に留めたい
     */
     return {
       props,
