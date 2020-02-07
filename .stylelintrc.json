@@ -7,8 +7,10 @@
     "font-weight-notation": "named-where-possible",
     "linebreaks": "unix",
     "selector-pseudo-element-colon-notation": "double",
+    "selector-class-pattern": "^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$",
     "rule-empty-line-before": [
-      "always", {
+      "always",
+      {
         "except": ["inside-block"]
       }
     ],
