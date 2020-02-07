@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>外だしmethodでのemit処理</h2>
+    <h2 class="header header--size2">
+      外だしmethodでのemit処理
+    </h2>
     <button @click="emitTest">
       Emit Test
     </button>

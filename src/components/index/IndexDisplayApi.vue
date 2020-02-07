@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>API返却値</h2>
+    <h2 class="header header--size2">
+      API返却値
+    </h2>
     {{ props.apiResultText }}
   </div>
 </template>

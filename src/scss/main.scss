@@ -1,0 +1,47 @@
+/*
+
+https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4
+上記サイトを参考に下記のようなフォルダ構成を作成。
+BEMで管理する際に、不要と思われるフォルダは削除。
+ファイル表記は参考用
+
+sass/
+|
+|– base/
+|   |– _reset.scss        // Reset/normalize
+|   |– _typography.scss   // Typography rules
+|
+|– layout/
+|   |– _navigation.scss   // Navigation
+|   |– _grid.scss         // Grid system
+|   |– _header.scss       // Header
+|   |– _footer.scss       // Footer
+|   |– _sidebar.scss      // Sidebar
+|   |– _forms.scss        // Forms
+|
+|– abstracts/
+|   |– _variables.scss    // Sass Variables
+|   |– _functions.scss    // Sass Functions
+|   |– _mixins.scss       // Sass Mixins
+|
+|– blocks/
+|   |– _buttons.scss      // Buttons
+|   |– _carousel.scss     // Carousel
+|   |– _slider.scss       // Slider
+|
+`– main.scss              // Main Sass file
+
+*/
+
+// base
+@import './base/reset';
+
+// layout
+@import './layout/layout';
+
+// abstracts
+@import './abstracts/mixins';
+
+// blocks
+@import './blocks/page';
+@import './blocks/header';

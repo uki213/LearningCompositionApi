@@ -1,6 +1,8 @@
 <template>
   <dl>
-    <dt>金額</dt>
+    <dt class="header header--size2">
+      金額
+    </dt>
     <dd>
       <input
         :value="props.price"

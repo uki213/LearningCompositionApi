@@ -1,6 +1,6 @@
 <template>
-  <div id="index">
-    <h1>
+  <section>
+    <h1 class="header header--size1">
       ページタイトル
     </h1>
     <IndexNameInput
@@ -14,7 +14,7 @@
     <IndexDisplayApi :api-result-text="data.text" />
     <IndexDisplayStore />
     <IndexEmitTest @input="catchEmit" />
-  </div>
+  </section>
 </template>
 
 <script>

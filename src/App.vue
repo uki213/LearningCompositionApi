@@ -1,9 +1,12 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    class="page"
+  >
     <router-view />
   </div>
 </template>
 
 <style lang="scss">
-@import url('../src/scss/reset.scss');
+@import '../src/scss/main.scss';
 </style>

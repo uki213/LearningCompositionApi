@@ -1,6 +1,8 @@
 <template>
   <dl>
-    <dt>名前入力</dt>
+    <dt class="header header--size2">
+      名前入力
+    </dt>
     <dd>
       <input
         type="text"
@@ -39,5 +41,3 @@ export default createComponent({
   }
 })
 </script>
-
-<style lang="scss" scoped></style>

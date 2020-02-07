@@ -1,6 +1,8 @@
 <template>
   <section>
-    <h2>Vuex</h2>
+    <h2 class="header header--size2">
+      Vuex
+    </h2>
     <button @click="method.changeNumber">
       Number
     </button>
