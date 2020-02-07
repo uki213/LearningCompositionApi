@@ -1,0 +1,23 @@
+.input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input__text {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+.input__number {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #cccccc;
+  text-align: right;
+  box-sizing: border-box;
+}

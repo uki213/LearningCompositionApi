@@ -1,17 +1,20 @@
 <template>
-  <dl>
-    <dt class="header header--size2">
+  <dl class="price-input">
+    <dt class="header header--size2 price-input__header">
       金額
     </dt>
-    <dd>
+    <dd class="price-input__content">
       <input
+        class="input input__number"
         :value="props.price"
         type="number"
-        @input="$emit('input', $event.target.value)"
+        @input="$emit('input', Number($event.target.value))"
       >
       {{ /* emit処理はテンプレートに寄せる。受け渡す値に加工が必要な場合は業務ロジックに渡して戻り値を得る */ }}
     </dd>
-    <dd>税込み価格:{{ tax }}</dd>
+    <dd class="price-input__content">
+      税込み価格:{{ tax }}
+    </dd>
   </dl>
 </template>
 

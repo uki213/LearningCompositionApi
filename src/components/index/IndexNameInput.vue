@@ -1,10 +1,11 @@
 <template>
-  <dl>
-    <dt class="header header--size2">
+  <dl class="name-input">
+    <dt class="header header--size2 name-input__header">
       名前入力
     </dt>
-    <dd>
+    <dd class=" name-input__content">
       <input
+        class="input input__text"
         type="text"
         :value="props.name"
         @input="$emit('input', extractionValue($event))"

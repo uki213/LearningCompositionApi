@@ -1,0 +1,32 @@
+.button {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  color: #666666;
+  background: #f0f0f0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button--large {
+  height: 50px;
+}
+
+.button--middle {
+  height: 40px;
+}
+
+.button--small {
+  height: 30px;
+}
+
+.button--blue {
+  color: #ffffff;
+  background-color: #2a77be;
+}

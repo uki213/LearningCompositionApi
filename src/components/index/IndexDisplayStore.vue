@@ -1,21 +1,33 @@
 <template>
-  <section>
-    <h2 class="header header--size2">
+  <section class="display-store">
+    <h2 class="header header--size2 display-store__header">
       Vuex
     </h2>
-    <button @click="method.changeNumber">
+    <button
+      class="button display-store__button"
+      @click="method.changeNumber"
+    >
       Number
     </button>
-    <button @click="method.changeString">
+    <button
+      class="button display-store__button"
+      @click="method.changeString"
+    >
       String
     </button>
-    <button @click="method.pushArray">
+    <button
+      class="button button--small button--blue display-store__button"
+      @click="method.pushArray"
+    >
       Array.Push
     </button>
-    <button @click="method.popArray">
+    <button
+      class="button button--small button--blue display-store__button--last"
+      @click="method.popArray"
+    >
       Array.Pop
     </button>
-    <pre>
+    <pre class="display-store__content">
     {{ sampleStore }}
     </pre>
   </section>

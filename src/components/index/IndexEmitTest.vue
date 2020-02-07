@@ -3,7 +3,10 @@
     <h2 class="header header--size2">
       外だしmethodでのemit処理
     </h2>
-    <button @click="emitTest">
+    <button
+      class="button button--small"
+      @click="emitTest"
+    >
       Emit Test
     </button>
     コンソールログを確認
