@@ -6,7 +6,12 @@
     "color-hex-length": "long",
     "font-weight-notation": "named-where-possible",
     "linebreaks": "unix",
-    "selector-pseudo-element-colon-notation":"double",
+    "selector-pseudo-element-colon-notation": "double",
+    "rule-empty-line-before": [
+      "always", {
+        "except": ["inside-block"]
+      }
+    ],
     "order/properties-order": [
       "display",
       "visibility",
