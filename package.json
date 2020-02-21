@@ -9,7 +9,7 @@
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "npm run lint:js & npm run lint:css",
     "lint:js": "vue-cli-service lint",
-    "lint:css": "stylelint 'src/**/*.(scss|vue)'"
+    "lint:css": "stylelint \"src/**/*.(scss|vue)\""
   },
   "dependencies": {
     "@vue/composition-api": "^0.3.4",
@@ -55,7 +55,7 @@
       "git add"
     ],
     "*.{scss,vue}": [
-      "stylelint 'src/**/*.(scss|vue)' --fix",
+      "stylelint \"src/**/*.(scss|vue)\" --fix",
       "git add"
     ]
   }
