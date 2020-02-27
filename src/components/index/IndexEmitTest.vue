@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="header header--size2">
-      外だしmethodでのemit処理
+      setup関数の外にあるmethodでのemit処理
     </h2>
     <button
       class="button button--small"
@@ -14,6 +14,11 @@
 </template>
 
 <script>
+/*
+
+  この方法は、あまり良くないので基本使わない。
+
+*/
 import { createComponent } from '@vue/composition-api'
 
 let $ // setup関数の外でcontextを参照したいので、スコープ外にアクセス領域のための場所を確保する

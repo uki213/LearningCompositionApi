@@ -1,9 +1,11 @@
+const StylelintPlugin = require('stylelint-webpack-plugin')
+
 module.exports = {
-  pluginOptions: {
-    lintStyleOnBuild: true,
-    stylelint: {
-      fix: true,
-      files: 'src/**/*.{vue,scss}'
-    }
+  configureWebpack: {
+    plugins: [
+      new StylelintPlugin({
+        files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}']
+      })
+    ]
   }
 }
