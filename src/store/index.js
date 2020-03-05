@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import Deferred from '@/deferred'
 
 Vue.use(Vuex)
+
+let deferred = null
 
 export default new Vuex.Store({
   state: {
@@ -9,6 +12,12 @@ export default new Vuex.Store({
       testNumber: 0,
       testString: 'test string',
       testArray: ['a', 'b', 'c']
+    },
+    modal: {
+      isOpen: false,
+      head: '',
+      body: '',
+      data: {}
     }
   },
   mutations: {
@@ -23,6 +32,18 @@ export default new Vuex.Store({
     },
     popTestArray(state) {
       state.sampleStore.testArray.pop()
+    },
+    // Modal
+    changeModalState(state, object) {
+      state.modal = object
+    },
+    resetModalState(state) {
+      state.modal = {
+        isOpen: false,
+        name: '',
+        message: '',
+        data: {}
+      }
     }
   },
   actions: {
@@ -37,6 +58,34 @@ export default new Vuex.Store({
     },
     popTestArray(context) {
       context.commit('popTestArray')
+    },
+    // Modal
+    modalOpen(context, options) {
+      deferred = new Deferred()
+
+      const option = {
+        isOpen: true,
+        head: '',
+        body: '',
+        data: {},
+        ...options
+      }
+
+      context.commit('changeModalState', option)
+
+      deferred.promise.then(
+        () => { deferred = null },
+        () => { deferred = null }
+      )
+      return deferred.promise
+    },
+    modalResolve(context, result = '') {
+      deferred.resolve(result)
+      context.commit('resetModalState')
+    },
+    modalReject(context, result = '') {
+      deferred.reject(result)
+      context.commit('resetModalState')
     }
   },
   modules: {

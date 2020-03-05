@@ -14,6 +14,7 @@
     <IndexDisplayApi :api-result-text="data.text" />
     <IndexDisplayStore />
     <IndexEmitTest @input="catchEmit" />
+    <IndexModalTest />
   </section>
 </template>
 
@@ -60,7 +61,8 @@ export default defineComponent({
     IndexPriceInput: () => import('./IndexPriceInput.vue'),
     IndexDisplayApi: () => import('./IndexDisplayApi.vue'),
     IndexDisplayStore: () => import('./IndexDisplayStore.vue'),
-    IndexEmitTest: () => import('./IndexEmitTest.vue')
+    IndexEmitTest: () => import('./IndexEmitTest.vue'),
+    IndexModalTest: () => import('./IndexModalTest.vue')
   },
   setup() {
     const data = reactive(state)
