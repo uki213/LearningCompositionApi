@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { createComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed } from '@vue/composition-api'
 
 /*
   数が多い場合はメソッドにまとめても良い
@@ -30,7 +30,7 @@ function taxCalculator(price) {
   return Math.floor(price * taxRate)
 }
 
-export default createComponent({
+export default defineComponent({
   props: {
     price: {
       type: Number

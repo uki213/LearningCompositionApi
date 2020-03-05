@@ -15,14 +15,14 @@
 </template>
 
 <script>
-import { createComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 
 // emitする際に業務ロジックが必要な場合は、関数化する。
 function extractionValue(event) {
   return event.target.value
 }
 
-export default createComponent({
+export default defineComponent({
   props: {
     name: {
       type: String

@@ -19,7 +19,7 @@
   この方法は、あまり良くないので基本使わない。
 
 */
-import { createComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 
 let $ // setup関数の外でcontextを参照したいので、スコープ外にアクセス領域のための場所を確保する
 
@@ -27,7 +27,7 @@ function emitTest() {
   $.emit('input') // $.emitで呼び出し可能。このケースの場合contextをすべて取得しているので、$.attrや$.refsなども使える
 }
 
-export default createComponent({
+export default defineComponent({
   setup(props, context) {
     $ = context // contextをsetup関数のスコープ外へ出す
     return {

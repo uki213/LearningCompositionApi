@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { createComponent, reactive } from '@vue/composition-api'
+import { defineComponent, reactive } from '@vue/composition-api'
 import axios from '@/axios' // axiosを使用する際は明示的にimportする。vueインスタンスに追加しない
 
 // state（data属性）はsetup()の外に記述する
@@ -53,7 +53,7 @@ function init() {
   })
 }
 
-export default createComponent({
+export default defineComponent({
   components: { // コンポーネントの定義方法は同じ
     // 今後モジュールのimportが増えそうなので、コンポーネントは下記のような感じで書くほうが良いかも
     IndexNameInput: () => import('./IndexNameInput.vue'),

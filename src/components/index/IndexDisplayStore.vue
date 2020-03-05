@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { createComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import store from '@/store' // vuexでstoreにアクセスするためにはimportする。
 
 const method = {
@@ -52,7 +52,7 @@ const method = {
   }
 }
 
-export default createComponent({
+export default defineComponent({
   setup() {
     const { sampleStore } = store.state // 必要なstateを抽出してreturnする
     return {
