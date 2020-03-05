@@ -15,11 +15,11 @@ http.interceptors.request.use(
     config.headers['test-token'] = 'token'
     return config
   },
-  error => Promise.reject(error)
+  (error) => Promise.reject(error)
 )
 
 http.interceptors.response.use(
-  response => response,
+  (response) => response,
   (error) => {
     if (error.response.status === 404) {
       // alert('404 error')
