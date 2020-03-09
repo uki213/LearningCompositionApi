@@ -34,18 +34,19 @@
 import { defineComponent, computed } from '@vue/composition-api'
 import store from '@/store/index'
 
-const method = {
-  positiveAction() {
-    store.dispatch('modalResolve', 'OKボタンを選択')
-  },
-  negativeAction() {
-    store.dispatch('modalReject', 'CANCELボタンを選択')
-  }
-}
-
 export default defineComponent({
   setup() {
     const modal = computed(() => store.state.modal)
+
+    const method = {
+      positiveAction() {
+        store.dispatch('modalResolve', 'OKボタンを選択')
+      },
+      negativeAction() {
+        store.dispatch('modalReject', 'CANCELボタンを選択')
+      }
+    }
+
     return {
       modal,
       method

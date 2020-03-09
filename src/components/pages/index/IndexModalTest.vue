@@ -16,19 +16,19 @@
 import { defineComponent } from '@vue/composition-api'
 import store from '@/store/index'
 
-function openModal() {
-  store.dispatch('modalOpen', {
-    head: 'モーダルテスト',
-    body: 'ボタンを選択後、選択結果をcosole.logで確認できます。'
-  }).then((result) => {
-    console.log(result)
-  }).catch((result) => {
-    console.log(result)
-  })
-}
-
 export default defineComponent({
   setup() {
+    function openModal() {
+      store.dispatch('modalOpen', {
+        head: 'モーダルテスト',
+        body: 'ボタンを選択後、選択結果をcosole.logで確認できます。'
+      }).then((result) => {
+        console.log(result)
+      }).catch((result) => {
+        console.log(result)
+      })
+    }
+
     return {
       openModal
     }

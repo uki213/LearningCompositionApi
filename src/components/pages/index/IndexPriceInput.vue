@@ -6,7 +6,7 @@
     <dd class="price-input__content">
       <input
         class="input input__number"
-        :value="props.price"
+        :value="price"
         type="number"
         @input="$emit('input', Number($event.target.value))"
       >
@@ -21,15 +21,6 @@
 <script>
 import { defineComponent, computed } from '@vue/composition-api'
 
-/*
-  数が多い場合はメソッドにまとめても良い
-*/
-function taxCalculator(price) {
-  const taxRate = 1.1
-  // 消費税計算（10% 小数点切り捨て）
-  return Math.floor(price * taxRate)
-}
-
 export default defineComponent({
   props: {
     price: {
@@ -39,10 +30,12 @@ export default defineComponent({
   setup(props) {
     // 算出プロパティ
     // 業務ロジックはsetup関数の外に記述
-    const tax = computed(() => taxCalculator(props.price))
+    const tax = computed(() => {
+      const taxRate = 1.1 // 消費税計算（10% 小数点切り捨て）
+      return Math.floor(props.price * taxRate)
+    })
 
     return {
-      props,
       tax
     }
   }

@@ -34,27 +34,28 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, computed } from '@vue/composition-api'
 import store from '@/store' // vuexでstoreにアクセスするためにはimportする。
-
-const method = {
-  changeNumber() {
-    store.dispatch('changeTestNumber')
-  },
-  changeString() {
-    store.dispatch('changeTestString')
-  },
-  pushArray() {
-    store.dispatch('pushTestArray')
-  },
-  popArray() {
-    store.dispatch('popTestArray')
-  }
-}
 
 export default defineComponent({
   setup() {
-    const { sampleStore } = store.state // 必要なstateを抽出してreturnする
+    const sampleStore = computed(() => store.state.sampleStore)
+
+    const method = {
+      changeNumber() {
+        store.dispatch('changeTestNumber')
+      },
+      changeString() {
+        store.dispatch('changeTestString')
+      },
+      pushArray() {
+        store.dispatch('pushTestArray')
+      },
+      popArray() {
+        store.dispatch('popTestArray')
+      }
+    }
+
     return {
       sampleStore,
       method

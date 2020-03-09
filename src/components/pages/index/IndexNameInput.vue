@@ -17,11 +17,6 @@
 <script>
 import { defineComponent } from '@vue/composition-api'
 
-// emitする際に業務ロジックが必要な場合は、関数化する。
-function extractionValue(event) {
-  return event.target.value
-}
-
 export default defineComponent({
   props: {
     name: {
@@ -35,6 +30,12 @@ export default defineComponent({
       強引な手法に転用できるので、使わずにいられるのであれば使いたくない。
       どうしても使用する場合も[ emit、refs、attrs ]程度に留めたい
     */
+
+    // emitする際に業務ロジックが必要な場合は、関数化する。
+    function extractionValue(event) {
+      return event.target.value
+    }
+
     return {
       props,
       extractionValue
